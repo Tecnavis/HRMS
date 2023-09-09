@@ -1,50 +1,49 @@
 {
-  "name": "soft-ui-dashboard",
-  "version": "1.0.7",
-  "description": "Freebie Dashboard for Bootstrap 5",
-  "main": "pages/dashboard.html",
-  "directories": {
-    "example": "root"
-  },
+  "name": "deskapp",
+  "version": "0.0.2",
+  "description": "deskapp free bootstrap 4 admin template",
+  "main": "gulpfile.js",
   "scripts": {
-    "open-app": "gulp open-app",
-    "start": "npm run open-app",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "gulp-watch"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/soft-ui-dashboard.git"
+    "url": "https://github.com/dropways/deskapp"
   },
   "keywords": [
-    "soft ui dashboard",
-    "bootstrap 5",
-    "dashboard",
-    "creative tim",
-    "html dashboard",
-    "html css dashboard",
-    "web dashboard",
-    "freebie",
-    "free bootstrap dashboard",
-    "css3 dashboard",
-    "bootstrap dashboard",
-    "frontend",
-    "responsive bootstrap dashboard"
+    "admin",
+    "bootstrap 4",
+    "admin dashboard",
+    "free dashboard",
+    "admin template",
+    "admin panel",
+    "ui kit",
+    "bootstrap template"
   ],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/creativetimofficial/soft-ui-dashboard/issues"
-  },
+  "author": "Ankit Hingarajiya",
+  "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-clean": "^0.4.0",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-changed": "^3.1.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-coffee": "^2.3.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-imagemin": "^5.0.3",
     "gulp-install": "^1.1.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sourcemaps": "^2.6.5",
-    "gulp-open": "^3.0.1",
-    "sass": "^1.49.9"
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.0",
+    "jquery": "^3.2.1",
+    "streamqueue": "^1.1.1"
   },
-  "homepage": "http://creative-tim.com/product/soft-ui-dashboard"
+  "dependencies": {
+    "gulp-csso": "^4.0.1",
+    "gulp-install": "^1.1.0",
+    "install": "^0.12.1",
+    "npm": "^6.4.1",
+    "onscreen": "^1.1.3"
+  }
 }
