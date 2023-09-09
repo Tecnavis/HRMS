@@ -1,7 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<!-- Basic Page Info -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Members Dashboard</title>
+    <!-- Include Bootstrap 4 CSS and JS here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    	<!-- Basic Page Info -->
 	<meta charset="utf-8">
 	<title>DeskApp - Bootstrap Admin Dashboard HTML Template</title>
 
@@ -9,7 +14,6 @@
 	<link rel="apple-touch-icon" sizes="180x180" href="vendors/images/apple-touch-icon.png">
 	<link rel="icon" type="image/png" sizes="32x32" href="vendors/images/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="vendors/images/favicon-16x16.png">
-
 
 	<!-- Mobile Specific Metas -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -19,9 +23,10 @@
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="vendors/styles/core.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/icon-font.min.css">
-	<!-- <link rel="stylesheet" type="text/css" href="src/plugins/fullcalendar/fullcalendar.css"> -->
+	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/dataTables.bootstrap4.min.css">
+	<link rel="stylesheet" type="text/css" href="src/plugins/datatables/css/responsive.bootstrap4.min.css">
 	<link rel="stylesheet" type="text/css" href="vendors/styles/style.css">
-	<link rel="calendar" href="https://calendar.google.com/calendar/embed?src=thabsheermohd4%40gmail.com&ctz=Asia%2FKolkata">
+
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
 	<script>
@@ -33,9 +38,7 @@
 	</script>
 </head>
 <body>
-	
-	
-
+    
 	<div class="header">
 		<div class="header-left">
 			<div class="menu-icon dw dw-menu"></div>
@@ -239,8 +242,8 @@
 	<div class="left-side-bar">
 		<div class="brand-logo">
 			<a href="index.html">
-				<img src="vendors/images/deskapp-logo.svg" alt="" class="dark-logo">
-				<img src="vendors/images/deskapp-logo-white.svg" alt="" class="light-logo">
+				<img src="vendors/images/logo landscape black.png" alt="" class="dark-logo">
+				<img src="vendors/images/logo landscape.png" alt="" class="light-logo">
 			</a>
 			<div class="close-sidebar" data-toggle="left-sidebar-close">
 				<i class="ion-close-round"></i>
@@ -295,110 +298,149 @@
 			</div>
 		</div>
 	</div>
-	<div class="mobile-menu-overlay"></div>
+    <div class="main-container">
+		<div class="pd-ltr-20">
+    <!-- Navigation Bar (you can include this in your dashboard template) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Admin Dashboard</a>
+    </nav>
 
-	<div class="main-container">
-		<div class="pd-ltr-20 xs-pd-20-10">
-			<div class="min-height-200px">
-				<div class="page-header">
-					<div class="row">
-						<div class="col-md-12 col-sm-12">
-							<div class="title">
-								<h4>Calendar</h4>
-							</div>
-							<nav aria-label="breadcrumb" role="navigation">
-								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html">Home</a></li>
-									<li class="breadcrumb-item active" aria-current="page">Calendar</li>
-								</ol>
-							</nav>
-						</div>
-					</div>
-				</div>
-				<div class="pd-20 card-box mb-30">
-					<div class="calendar-wrap">
-						<div id='calendar'></div>
-					</div>
-					<!-- calendar modal -->
-					<!-- <div id="modal-view-event" class="modal modal-top fade calendar-modal">
-						<div class="modal-dialog modal-dialog-centered">
-							<div class="modal-content">
-								<div class="modal-body">
-									<h4 class="h4"><span class="event-icon weight-400 mr-3"></span><span class="event-title"></span></h4>
-									<div class="event-body"></div>
-								</div>
-								<div class="modal-footer">
-									<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-								</div>
-							</div>
-						</div>
-					</div>
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <h1>Members</h1>
 
-					<div id="modal-view-event-add" class="modal modal-top fade calendar-modal">
-						<div class="modal-dialog modal-dialog-centered">
-							<div class="modal-content">
-								<form id="add-event">
-									<div class="modal-body">
-										<h4 class="text-blue h4 mb-10">Add Event Detail</h4>
-										<div class="form-group">
-											<label>Event name</label>
-											<input type="text" class="form-control" name="ename">
-										</div>
-										<div class="form-group">
-											<label>Event Date</label>
-											<input type='text' class="datetimepicker form-control" name="edate">
-										</div>
-										<div class="form-group">
-											<label>Event Description</label>
-											<textarea class="form-control" name="edesc"></textarea>
-										</div>
-										<div class="form-group">
-											<label>Event Color</label>
-											<select class="form-control" name="ecolor">
-												<option value="fc-bg-default">fc-bg-default</option>
-												<option value="fc-bg-blue">fc-bg-blue</option>
-												<option value="fc-bg-lightgreen">fc-bg-lightgreen</option>
-												<option value="fc-bg-pinkred">fc-bg-pinkred</option>
-												<option value="fc-bg-deepskyblue">fc-bg-deepskyblue</option>
-											</select>
-										</div>
-										<div class="form-group">
-											<label>Event Icon</label>
-											<select class="form-control" name="eicon">
-												<option value="circle">circle</option>
-												<option value="cog">cog</option>
-												<option value="group">group</option>
-												<option value="suitcase">suitcase</option>
-												<option value="calendar">calendar</option>
-											</select>
-										</div>
-									</div>
-									<div class="modal-footer">
-										<button type="submit" class="btn btn-primary" >Save</button>
-										<button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div> -->
+        <!-- Add Member Button -->
+        <button class="btn btn-success mb-3" data-toggle="modal" data-target="#addMemberModal">Add Member</button>
 
+        <!-- Member Cards -->
+        <div class="row" id="memberContainer">
+            <!-- Member cards will be dynamically added here -->
+        </div>
+    </div>
 
+    <!-- Add Member Modal -->
+    <div class="modal fade" id="addMemberModal" tabindex="-1" role="dialog" aria-labelledby="addMemberModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addMemberModalLabel">Add Member</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <!-- Member Form -->
+                    <form id="addMemberForm">
+                        <div class="form-group">
+                            <label for="memberName">Name</label>
+                            <input type="text" class="form-control" id="memberName" placeholder="Enter Member Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="memberBio">Bio</label>
+                            <textarea class="form-control" id="memberBio" rows="4" placeholder="Enter Member Bio" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="memberPhoto">Profile Photo URL</label>
+                            <input type="text" class="form-control" id="memberPhoto" placeholder="Enter Profile Photo URL">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" form="addMemberForm" class="btn btn-primary">Add Member</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
-					<iframe src="https://calendar.google.com/calendar/embed?height=600&wkst=1&bgcolor=%23ffffff&ctz=Asia%2FKolkata&showTitle=0&showPrint=0&showTz=0&showCalendars=0&src=ZjU3YzdmMTllNDhkN2IyNWM5YzViMmYyMTUxODU3ZjQyOTYyZWVlODQ4MmQ3MWEzYzYxZGNmNzVjMWU1YmVkOEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23C0CA33" style="border-width:0" width="100%" height="600" frameborder="0" scrolling="no"></iframe>
+    <!-- Include Bootstrap 4 JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-				</div>
-			</div>
-			<div class="footer-wrap pd-20 mb-20 card-box">
-				DeskApp - Bootstrap 4 Admin Template By <a href="https://github.com/dropways" target="_blank">Ankit Hingarajiya</a>
-			</div>
-		</div>
-	</div>
-	<!-- js -->
-	<script src="vendors/scripts/core.js"></script>
-	<script src="vendors/scripts/script.min.js"></script>
-	<script src="vendors/scripts/process.js"></script>
-	<script src="vendors/scripts/layout-settings.js"></script>
-	<!-- <script src="src/plugins/fullcalendar/fullcalendar.min.js"></script>
-	<script src="vendors/scripts/calendar-setting.js"></script> -->
+    <script>
+        const members = [
+            {
+                id: 1,
+                name: "John Doe",
+                bio: "Web Developer",
+                photo: "https://via.placeholder.com/150",
+            },
+            {
+                id: 2,
+                name: "Jane Smith",
+                bio: "Graphic Designer",
+                photo: "https://via.placeholder.com/150",
+            },
+            {
+                id: 3,
+                name: "Bob Johnson",
+                bio: "Data Analyst",
+                photo: "https://via.placeholder.com/150",
+            },
+        ];
+
+        function createMemberCard(member) {
+            const memberContainer = document.getElementById('memberContainer');
+
+            const memberCard = document.createElement('div');
+            memberCard.classList.add('col-md-4', 'mb-4');
+
+            memberCard.innerHTML = `
+                <div class="card">
+                    <img src="${member.photo}" class="card-img-top" alt="Profile Photo">
+                    <div class="card-body">
+                        <h5 class="card-title">${member.name}</h5>
+                        <p class="card-text">${member.bio}</p>
+                        <button class="btn btn-danger" onclick="removeMember(${member.id})">Remove Member</button>
+                    </div>
+                </div>
+            `;
+
+            memberContainer.appendChild(memberCard);
+        }
+
+        // Function to add a new member
+        function addMember(name, bio, photo) {
+            const newMember = {
+                id: Date.now(),
+                name,
+                bio,
+                photo,
+            };
+            members.push(newMember);
+            createMemberCard(newMember);
+        }
+
+        // Function to remove a member
+        function removeMember(memberId) {
+            const memberIndex = members.findIndex(member => member.id === memberId);
+            if (memberIndex !== -1) {
+                members.splice(memberIndex, 1);
+                refreshMemberList();
+            }
+        }
+
+        // Function to refresh the member list
+        function refreshMemberList() {
+            const memberContainer = document.getElementById('memberContainer');
+            memberContainer.innerHTML = '';
+            members.forEach(member => {
+                createMemberCard(member);
+            });
+        }
+
+        // Listen for the form submission and add a new member
+        document.getElementById('addMemberForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const name = document.getElementById('memberName').value;
+            const bio = document.getElementById('memberBio').value;
+            const photo = document.getElementById('memberPhoto').value;
+            addMember(name, bio, photo);
+            $('#addMemberModal').modal('hide');
+            // Clear the form
+            document.getElementById('addMemberForm').reset();
+        });
+    </script>
 </body>
 </html>
